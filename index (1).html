@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ayesha Siddika Mim | Financial Analytics Portfolio</title>
+<style>
+  :root {
+    --bg: #0f1b2d;
+    --bg-card: #16263d;
+    --accent: #4fa3d1;
+    --text-main: #ffffff;
+    --text-muted: #c4cdd9;
+    --border: #28384f;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background-color: var(--bg);
+    color: var(--text-muted);
+    font-family: 'Georgia', 'Cambria', serif;
+    line-height: 1.65;
+  }
+
+  .container {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  header.hero {
+    padding: 80px 0 56px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .eyebrow {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-size: 12px;
+    color: var(--accent);
+    margin-bottom: 14px;
+  }
+
+  h1 {
+    color: var(--text-main);
+    font-size: 34px;
+    font-weight: 400;
+    margin-bottom: 8px;
+  }
+
+  .subtitle {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 15px;
+    color: var(--text-muted);
+    margin-bottom: 20px;
+  }
+
+  .positioning {
+    font-size: 17px;
+    color: var(--text-main);
+    max-width: 640px;
+    font-style: italic;
+  }
+
+  section {
+    padding: 56px 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  section:last-of-type {
+    border-bottom: none;
+  }
+
+  h2 {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    color: var(--text-main);
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    margin-bottom: 28px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  h2::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+
+  /* Skills */
+  .skills-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .skill-tag {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 13px;
+    color: var(--text-main);
+    border: 1px solid var(--border);
+    padding: 8px 14px;
+    border-radius: 3px;
+    background: var(--bg-card);
+  }
+
+  /* Project cards */
+  .project-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 28px 32px;
+    margin-bottom: 24px;
+  }
+
+  .project-card:last-child { margin-bottom: 0; }
+
+  .project-title {
+    color: var(--text-main);
+    font-size: 19px;
+    margin-bottom: 4px;
+  }
+
+  .project-meta {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 12px;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 16px;
+  }
+
+  .project-card p {
+    margin-bottom: 12px;
+    font-size: 15px;
+  }
+
+  .project-card ul {
+    margin: 0 0 14px 20px;
+    font-size: 15px;
+  }
+
+  .project-card li {
+    margin-bottom: 6px;
+  }
+
+  .label {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    color: var(--text-main);
+    font-weight: bold;
+    font-size: 13px;
+  }
+
+  .plot-frame {
+    border: 1px solid var(--border);
+    border-radius: 3px;
+    padding: 10px;
+    margin: 16px 0;
+    background: #0c1726;
+  }
+
+  .plot-frame img {
+    width: 100%;
+    display: block;
+    border-radius: 2px;
+  }
+
+  .plot-placeholder {
+    border: 1px dashed var(--border);
+    border-radius: 3px;
+    padding: 40px 20px;
+    margin: 16px 0;
+    text-align: center;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 13px;
+    color: var(--text-muted);
+    background: #0c1726;
+  }
+
+  .key-finding {
+    border-left: 3px solid var(--accent);
+    padding: 12px 16px;
+    background: #0c1726;
+    font-size: 15px;
+    color: var(--text-main);
+    margin-top: 14px;
+  }
+
+  .caveat {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 13px;
+    color: var(--text-muted);
+    margin-top: 14px;
+    font-style: italic;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 14px 0;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 13.5px;
+  }
+
+  th, td {
+    text-align: left;
+    padding: 10px 12px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  th {
+    color: var(--text-main);
+    text-transform: uppercase;
+    font-size: 11px;
+    letter-spacing: 0.06em;
+  }
+
+  td { color: var(--text-muted); }
+
+  tr.selected td {
+    color: var(--text-main);
+  }
+
+  .tools-line {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 12.5px;
+    color: var(--text-muted);
+    margin-top: 16px;
+    padding-top: 12px;
+    border-top: 1px solid var(--border);
+  }
+
+  /* Links section */
+  .links-list {
+    list-style: none;
+  }
+
+  .links-list li {
+    margin-bottom: 12px;
+  }
+
+  .links-list a {
+    color: var(--accent);
+    text-decoration: none;
+    font-size: 15px;
+    border-bottom: 1px solid transparent;
+  }
+
+  .links-list a:hover {
+    border-bottom: 1px solid var(--accent);
+  }
+
+  /* AI disclosure */
+  .disclosure-box {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 24px 28px;
+    font-size: 14.5px;
+  }
+
+  /* Contact */
+  .contact-row {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 15px;
+  }
+
+  .contact-row a {
+    color: var(--accent);
+    text-decoration: none;
+  }
+
+  footer {
+    padding: 32px 0 48px;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 12px;
+    color: var(--text-muted);
+    text-align: center;
+  }
+
+  @media (max-width: 600px) {
+    header.hero { padding: 56px 0 40px; }
+    h1 { font-size: 26px; }
+    .project-card { padding: 22px 20px; }
+    table { font-size: 12px; }
+    th, td { padding: 8px 6px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <!-- 1. Home / About -->
+  <header class="hero" id="about">
+    <div class="eyebrow">FIN 4333 — Financial Analytics &middot; Team Executive's Edge</div>
+    <h1>Ayesha Siddika Mim</h1>
+    <div class="subtitle">
+      BBA in Finance &middot; School of Business &amp; Economics &middot; United International University (UIU), Dhaka, Bangladesh &middot; Student ID: 111201142
+    </div>
+    <p class="positioning">
+      Aspiring financial analyst with a growing interest in quantitative research and data-driven investment analysis, currently building hands-on experience as a financial analytics learner through applied work in market data modeling, volatility forecasting, and equity return prediction.
+    </p>
+  </header>
+
+  <!-- 2. Skills Snapshot -->
+  <section id="skills">
+    <h2>Skills Snapshot</h2>
+    <div class="skills-grid">
+      <span class="skill-tag">Python</span>
+      <span class="skill-tag">pandas</span>
+      <span class="skill-tag">Jupyter</span>
+      <span class="skill-tag">Data Cleaning</span>
+      <span class="skill-tag">Visualization</span>
+      <span class="skill-tag">Return Calculation</span>
+      <span class="skill-tag">GARCH Volatility Modeling</span>
+      <span class="skill-tag">ARIMA</span>
+      <span class="skill-tag">LSTM</span>
+      <span class="skill-tag">Model Evaluation</span>
+      <span class="skill-tag">Financial Memo Writing</span>
+      <span class="skill-tag">Responsible AI Use</span>
+    </div>
+  </section>
+
+  <!-- 3, 4, 5. Projects -->
+  <section id="projects">
+    <h2>Projects</h2>
+
+    <!-- Project 1 -->
+    <div class="project-card">
+      <div class="project-title">Project 1 &mdash; Grameenphone Ltd. Analytics Dataset</div>
+      <div class="project-meta">Monthly Analytics-Ready Dataset &middot; 2020&ndash;2024</div>
+      <p>
+        Built a clean, monthly analytics-ready dataset for Grameenphone Ltd. by combining stock price data from Yahoo Finance, firm-level fundamentals, and macroeconomic indicators from the World Bank API. The final dataset contains <strong style="color: var(--text-main);">60 monthly rows across 12 variables</strong>, spanning the 2020&ndash;2024 period.
+      </p>
+      <ul>
+        <li><span class="label">Data sources:</span> Yahoo Finance (stock data), firm-level variables, World Bank API (macro indicators)</li>
+        <li><span class="label">Alignment rule:</span> Annual firm-level data matched to corresponding monthly observations</li>
+        <li><span class="label">Quality checks:</span> Missing values treated and a full data dictionary documented for all 12 variables</li>
+      </ul>
+      <div class="tools-line">Tools: Python, pandas, yfinance, World Bank API, openpyxl, Jupyter</div>
+    </div>
+
+    <!-- Project 2 -->
+    <div class="project-card">
+      <div class="project-title">Project 2 &mdash; NVDA GARCH(1,1) Volatility Forecasting</div>
+      <div class="project-meta">Risk Analysis &middot; Daily Log Returns</div>
+      <p>
+        Modeled NVIDIA (NVDA) daily log returns using an ARIMA(2,0,3) + GARCH(1,1) specification to estimate and forecast volatility. The model produced an annualized volatility of <strong style="color: var(--text-main);">41.56%</strong> and a 30-day forward volatility forecast of <strong style="color: var(--text-main);">49.19%</strong>, leading to a <strong style="color: var(--text-main);">HIGH RISK</strong> classification.
+      </p>
+
+      <div class="plot-frame">
+        <img src="REPLACE_WITH_GARCH_PLOT_URL.png" alt="GARCH(1,1) Volatility Forecast Plot for NVDA">
+      </div>
+      <div class="plot-placeholder" style="display:none;" id="garch-fallback">
+        [ Insert GARCH(1,1) volatility forecast plot here ]
+      </div>
+
+      <div class="key-finding">
+        <span class="label">Key finding (risk memo):</span> NVDA carries significantly elevated risk and is unsuitable for low-risk portfolios.
+      </div>
+      <div class="tools-line">Tools: Python, arch, statsmodels, pmdarima, Matplotlib, python-docx</div>
+    </div>
+
+    <!-- Project 3 -->
+    <div class="project-card">
+      <div class="project-title">Project 3 &mdash; NVDA ARIMA vs LSTM Return Forecasting</div>
+      <div class="project-meta">Model Comparison &middot; Chronological 70/15/15 Split</div>
+      <p>
+        Compared an ARIMA model against an LSTM neural network for forecasting NVDA daily log returns, using a chronological 70/15/15 train/validation/test split. The selected model, <strong style="color: var(--text-main);">ARIMA(1,0,0)</strong>, achieved an AIC of <strong style="color: var(--text-main);">&minus;4208.7063</strong>.
+      </p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Model</th>
+            <th>Test MAE</th>
+            <th>Test RMSE</th>
+            <th>Directional Accuracy</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="selected">
+            <td>ARIMA(1,0,0) &#10003; Selected</td>
+            <td>0.025625</td>
+            <td>0.033266</td>
+            <td>53.44%</td>
+          </tr>
+          <tr>
+            <td>LSTM (50u, w=10)</td>
+            <td>0.025160</td>
+            <td>0.032646</td>
+            <td>50.26%</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="plot-frame">
+        <img src="REPLACE_WITH_ARIMA_LSTM_PLOT_URL.png" alt="ARIMA vs LSTM Actual vs Forecast Plot for NVDA">
+      </div>
+
+      <p style="margin-top: 4px;">
+        <span class="label">Selected model:</span> ARIMA(1,0,0) &mdash; the marginal RMSE difference versus LSTM did not justify the added model complexity.
+      </p>
+      <p><span class="label">30-day outlook:</span> +0.002118 average daily log return (Positive)</p>
+
+      <div class="caveat">
+        Caveat: Return forecasts are noisy and should not be treated as guaranteed trading signals.
+      </div>
+      <div class="tools-line">Tools: Python, TensorFlow, Keras, scikit-learn, statsmodels, Plotly</div>
+    </div>
+  </section>
+
+  <!-- 6. Downloads / Links -->
+  <section id="links">
+    <h2>Downloads &amp; Links</h2>
+    <ul class="links-list">
+      <li>&#128193; <a href="REPLACE_WITH_GOOGLE_DRIVE_FOLDER_LINK" target="_blank" rel="noopener">Project Files &amp; Notebooks (Google Drive Folder)</a></li>
+    </ul>
+  </section>
+
+  <!-- 7. AI Disclosure -->
+  <section id="ai-disclosure">
+    <h2>AI Disclosure</h2>
+    <div class="disclosure-box">
+      <p>
+        Claude (Anthropic) was used to assist with code generation and drafting throughout these projects. All AI-generated outputs were reviewed and verified manually before use. No AI-generated content was submitted without independent verification.
+      </p>
+    </div>
+  </section>
+
+  <!-- 8. Contact -->
+  <section id="contact">
+    <h2>Contact</h2>
+    <div class="contact-row">
+      LinkedIn: <a href="https://www.linkedin.com/public-profile/settings" target="_blank" rel="noopener">linkedin.com/public-profile/settings</a>
+    </div>
+  </section>
+
+  <footer>
+    Ayesha Siddika Mim | FIN 4333 Financial Analytics | Team Executive's Edge | UIU
+  </footer>
+
+</div>
+
+</body>
+</html>
